@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="Predictive model" soapui-version="5.6.1" abortOnError="false" runType="SEQUENTIAL" id="ee7edda8-24cb-4cb3-a465-c0669e48ed53" activeEnvironment="Default" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="pmCustomHttp" type="wsdl" bindingName="{http://tempuri.org/}pmCustomHttp" soapVersion="1_2" anonymous="optional" definition="http://localhost:41380/PredictiveModelService.svc?wsdl" id="dd98372e-b6ec-4a5f-9b4e-732b30c47429" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:41380/PredictiveModelService.svc?wsdl"><con:part><con:url>http://localhost:41380/PredictiveModelService.svc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PredictiveModelService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:i0="PredictiveModelService.Entities" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:import namespace="PredictiveModelService.Entities" location="http://localhost:41380/PredictiveModelService.svc?wsdl=wsdl0"/>
+  <wsdl:types/>
+  <wsdl:binding name="pmCustomHttp" type="i0:IPredictiveModelService">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CalculateFactor">
+      <soap12:operation soapAction="PredictiveModelService.Entities/IPredictiveModelService/CalculateFactor" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRawReportData">
+      <soap12:operation soapAction="PredictiveModelService.Entities/IPredictiveModelService/GetRawReportData" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunHealthCheck">
+      <soap12:operation soapAction="PredictiveModelService.Entities/IPredictiveModelService/RunHealthCheck" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PredictiveModelService">
+    <wsdl:port name="pmCustomHttp" binding="tns:pmCustomHttp">
+      <soap12:address location="http://localhost:41380/PredictiveModelService.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:41380/PredictiveModelService.svc?wsdl=wsdl0</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="PredictiveModelService.Entities" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="PredictiveModelService.Entities" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+    <xsd:schema targetNamespace="PredictiveModelService.Entities/Imports">
+      <xsd:import schemaLocation="http://localhost:41380/PredictiveModelService.svc?xsd=xsd0" namespace="PredictiveModelService.Entities"/>
+      <xsd:import schemaLocation="http://localhost:41380/PredictiveModelService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://localhost:41380/PredictiveModelService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPredictiveModelService_CalculateFactor_InputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateFactor"/>
+  </wsdl:message>
+  <wsdl:message name="IPredictiveModelService_CalculateFactor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CalculateFactorResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPredictiveModelService_GetRawReportData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRawReportData"/>
+  </wsdl:message>
+  <wsdl:message name="IPredictiveModelService_GetRawReportData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRawReportDataResponse"/>
+  </wsdl:message>
+  <wsdl:message name="IPredictiveModelService_RunHealthCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:RunHealthCheck"/>
+  </wsdl:message>
+  <wsdl:message name="IPredictiveModelService_RunHealthCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RunHealthCheckResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IPredictiveModelService">
+    <wsdl:operation name="CalculateFactor">
+      <wsdl:input wsaw:Action="PredictiveModelService.Entities/IPredictiveModelService/CalculateFactor" message="tns:IPredictiveModelService_CalculateFactor_InputMessage"/>
+      <wsdl:output wsaw:Action="PredictiveModelService.Entities/IPredictiveModelService/CalculateFactorResponse" message="tns:IPredictiveModelService_CalculateFactor_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetRawReportData">
+      <wsdl:input wsaw:Action="PredictiveModelService.Entities/IPredictiveModelService/GetRawReportData" message="tns:IPredictiveModelService_GetRawReportData_InputMessage"/>
+      <wsdl:output wsaw:Action="PredictiveModelService.Entities/IPredictiveModelService/GetRawReportDataResponse" message="tns:IPredictiveModelService_GetRawReportData_OutputMessage"/>
+    </wsdl:operation>
+    <wsdl:operation name="RunHealthCheck">
+      <wsdl:input wsaw:Action="PredictiveModelService.Entities/IPredictiveModelService/RunHealthCheck" message="tns:IPredictiveModelService_RunHealthCheck_InputMessage"/>
+      <wsdl:output wsaw:Action="PredictiveModelService.Entities/IPredictiveModelService/RunHealthCheckResponse" message="tns:IPredictiveModelService_RunHealthCheck_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:41380/PredictiveModelService.svc?xsd=xsd0</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="PredictiveModelService.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="PredictiveModelService.Entities">
+  <xs:import schemaLocation="http://localhost:41380/PredictiveModelService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson"/>
+  <xs:element name="CalculateFactor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="tns:PredictiveModelFactorCalcRequest"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PredictiveModelFactorCalcRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BasePredictiveModelFactorCalcRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AdditionalInsureds" nillable="true" type="tns:ArrayOfAdditionalInsured"/>
+          <xs:element minOccurs="0" name="BatchCounter" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="BatchStatus" nillable="true" type="tns:BatchStatus"/>
+          <xs:element minOccurs="0" name="BusinessSegment" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="BusinessStartYear" type="xs:int"/>
+          <xs:element minOccurs="0" name="ChampionRequestDateTime" nillable="true" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="ChampionRequestObjId" type="q1:ObjectId" xmlns:q1="http://schemas.datacontract.org/2004/07/MongoDB.Bson"/>
+          <xs:element minOccurs="0" name="ClueReportId" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="LegalEntity" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Locations" nillable="true" type="tns:ArrayOfLocation"/>
+          <xs:element minOccurs="0" name="NumberOfNOICs" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="PaymentPlanType" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PersonalCreditScore" nillable="true" type="xs:int"/>
+          <xs:element minOccurs="0" name="PredictiveModelPolicyID" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PriorRateIndicator" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PriorTierFactorLiability" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="PriorTierFactorProperty" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="RequestSource" nillable="true" type="tns:RequestSource"/>
+          <xs:element minOccurs="0" name="TotalReinstatements" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PredictiveModelFactorCalcRequest" nillable="true" type="tns:PredictiveModelFactorCalcRequest"/>
+  <xs:complexType name="BasePredictiveModelFactorCalcRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BaseState" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ClaimCount" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="EffectiveDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="ExpirationDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="InceptionDate" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PolicyStatus" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PredictiveModelCriteria" nillable="true" type="tns:ModelCriteria">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SubmissionNumber" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasePredictiveModelFactorCalcRequest" nillable="true" type="tns:BasePredictiveModelFactorCalcRequest"/>
+  <xs:complexType name="ModelCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaseState" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ModelId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PolicyStatus" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TransactionType" type="tns:TransactionType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModelCriteria" nillable="true" type="tns:ModelCriteria"/>
+  <xs:simpleType name="TransactionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Submission"/>
+      <xs:enumeration value="Renewals"/>
+      <xs:enumeration value="RewriteWithNewTerm"/>
+      <xs:enumeration value="PolicyChange"/>
+      <xs:enumeration value="RewriteRemainderOfTheTerm"/>
+      <xs:enumeration value="Cancellation"/>
+      <xs:enumeration value="Reinstatement"/>
+      <xs:enumeration value="RewriteFullTerm"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransactionType" nillable="true" type="tns:TransactionType"/>
+  <xs:complexType name="ArrayOfAdditionalInsured">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AdditionalInsured" nillable="true" type="tns:AdditionalInsured"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAdditionalInsured" nillable="true" type="tns:ArrayOfAdditionalInsured"/>
+  <xs:complexType name="AdditionalInsured">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInsuredName" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AdditionalInsuredNumber" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AdditionalInsured" nillable="true" type="tns:AdditionalInsured"/>
+  <xs:simpleType name="BatchStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Pending"/>
+      <xs:enumeration value="Failed"/>
+      <xs:enumeration value="Processed"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BatchStatus" nillable="true" type="tns:BatchStatus"/>
+  <xs:complexType name="ArrayOfLocation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Location" nillable="true" type="tns:Location"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLocation" nillable="true" type="tns:ArrayOfLocation"/>
+  <xs:complexType name="Location">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:Address"/>
+      <xs:element minOccurs="0" name="Buildings" nillable="true" type="tns:ArrayOfBuilding"/>
+      <xs:element minOccurs="0" name="LocationNumber" type="xs:int"/>
+      <xs:element minOccurs="0" name="LocationState" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PrefillReportId" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PropertyID" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Location" nillable="true" type="tns:Location"/>
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="County" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Zip" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Address" nillable="true" type="tns:Address"/>
+  <xs:complexType name="ArrayOfBuilding">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Building" nillable="true" type="tns:Building"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBuilding" nillable="true" type="tns:ArrayOfBuilding"/>
+  <xs:complexType name="Building">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BuildingLimit" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="BuildingNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BusinessPersonalPropertyLimit" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="NoofStories" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="SquareFootage" nillable="true" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="YearBuilt" type="xs:int"/>
+      <xs:element minOccurs="0" name="YearofLastElectricalUpgrade" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="YearofLastHVACUpgrade" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="YearofLastPlumbingUpgrade" nillable="true" type="xs:int"/>
+      <xs:element minOccurs="0" name="YearofLastRoofingUpgrade" nillable="true" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Building" nillable="true" type="tns:Building"/>
+  <xs:simpleType name="RequestSource">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PC"/>
+      <xs:enumeration value="Batch"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RequestSource" nillable="true" type="tns:RequestSource"/>
+  <xs:element name="CalculateFactorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CalculateFactorResult" nillable="true" type="tns:PredictiveModelFactorCalcResponse"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PredictiveModelFactorCalcResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CorelationId" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ModelCriteria" nillable="true" type="tns:ModelCriteria">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="RateIndicator" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TierCapFactorLiability" nillable="true" type="xs:decimal"/>
+          <xs:element minOccurs="0" name="TierCapFactorProperty" nillable="true" type="xs:decimal"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PredictiveModelFactorCalcResponse" nillable="true" type="tns:PredictiveModelFactorCalcResponse"/>
+  <xs:complexType name="BaseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="tns:ArrayOfErrorDetail">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseResponse" nillable="true" type="tns:BaseResponse"/>
+  <xs:complexType name="ArrayOfErrorDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ErrorDetail" nillable="true" type="tns:ErrorDetail"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfErrorDetail" nillable="true" type="tns:ArrayOfErrorDetail"/>
+  <xs:complexType name="ErrorDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" type="tns:ErrorType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/"/>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ErrorInfo" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ErrorDetail" nillable="true" type="tns:ErrorDetail"/>
+  <xs:simpleType name="ErrorType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="Validation"/>
+      <xs:enumeration value="ServiceError"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ErrorType" nillable="true" type="tns:ErrorType"/>
+  <xs:element name="GetRawReportData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="tns:RawReportSearchCriteria"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RawReportSearchCriteria">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SubmissionNumber" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RawReportSearchCriteria" nillable="true" type="tns:RawReportSearchCriteria"/>
+  <xs:element name="GetRawReportDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRawReportDataResult" nillable="true" type="tns:RawReportViewModel"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RawReportViewModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdditionalInsured" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AdditionalInsuredFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="AdjustedNumberOfCompanionClaims" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BOPClaimsFrequency" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BPPExposureGrowth" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BPPExposureGrowthFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BPPExposureRenewingTerm" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BankruptcyFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BankruptcyIndicator" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BaseState" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BuildingExposureGrowth" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BuildingExposureGrowthFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BuildingExposureRenewingTerm" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BusinessSegment" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="BusinessSegmentFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CancelReinstatementFactorLoss" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CancelReinstatementFactorRetention" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CancelTypeLookup" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ClaimFrequencyGroup" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CommercialCreditScore" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CommercialCreditScoreFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CompanionClaimFactorLoss" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CompanionClaimFactorRetention" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CompanionPolicyFactorLoss" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CompanionPolicyFactorRetention" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="EffectiveDate" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ExpirationDate" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="InceptionDate" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="InterceptFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LegalEntity" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LegalEntityGroup" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LienFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LienIndicator" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LocationFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LossRatioGrade" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LossRatioScore" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NJMTenureFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NumberOfCompanionPolicies" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NumberOfLocations" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PaymentPlanFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PaymentPlanTypeGroup" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PersonalCreditScore" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PersonalCreditScoreFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PolicyNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PolicyTenure" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PriorBOPAdjustedNumberofClaims" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PriorBOPClaimFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PriorTierFactorLiability" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PriorTierFactorProperty" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RateEffectiveDate" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RatingModel" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RetentionRatioGrade" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RetentionRatioScore" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SaveDateTime" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SubmissionNumber" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TierFactorLiability" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TierFactorProperty" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TotalWeightedEffBuildingAge" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="WeightedEffectiveBuildingAge" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="WorkFromHome" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="WorkFromHomeFactor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="YearsInBusiness" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="YearsInBusinessFactorLoss" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="YearsInBusinessFactorRetention" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RawReportViewModel" nillable="true" type="tns:RawReportViewModel"/>
+  <xs:element name="RunHealthCheck">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="tns:HCRequest"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="HCRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HCRequest" nillable="true" type="tns:HCRequest"/>
+  <xs:complexType name="BaseRequest">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:element name="BaseRequest" nillable="true" type="tns:BaseRequest"/>
+  <xs:element name="RunHealthCheckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RunHealthCheckResult" nillable="true" type="tns:HcResponse"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="HcResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TestResults" nillable="true" type="tns:ArrayOfTestResult"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HcResponse" nillable="true" type="tns:HcResponse"/>
+  <xs:complexType name="ArrayOfTestResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TestResult" nillable="true" type="tns:TestResult"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTestResult" nillable="true" type="tns:ArrayOfTestResult"/>
+  <xs:complexType name="TestResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="StackTrace" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestResult" nillable="true" type="tns:TestResult"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:41380/PredictiveModelService.svc?xsd=xsd2</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MongoDB.Bson" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/MongoDB.Bson">
+  <xs:import schemaLocation="http://localhost:41380/PredictiveModelService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+  <xs:complexType name="ObjectId">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="_a" type="xs:int"/>
+      <xs:element name="_b" type="xs:int"/>
+      <xs:element name="_c" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObjectId" nillable="true" type="tns:ObjectId"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:41380/PredictiveModelService.svc?xsd=xsd1</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://dotnetuat3.njmgroup.com/CPCGLPredictiveModel/PredictiveModelCPCGL.svc</con:endpoint><con:endpoint>http://localhost:41380/PredictiveModelService.svc</con:endpoint></con:endpoints><con:operation isOneWay="false" action="PredictiveModelService.Entities/IPredictiveModelService/CalculateFactor" name="CalculateFactor" bindingOperationName="CalculateFactor" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="3c6e48a3-442f-437d-99aa-689ebcdbd334"><con:settings/><con:call name="Request 1" id="2d4f2bfa-689a-48d5-9273-03bae670f0f7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:41380/PredictiveModelService.svc</con:endpoint><con:request><![CDATA[<!-- Created with Liquid XML 2016 Designer Edition 14.1.5.6733 (https://www.liquid-technologies.com) -->
+        <soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+            <s:Header xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+            </s:Header>
+            <soap12:Body>
+                <tns:CalculateFactor xmlns:tns="PredictiveModelService.Entities">
+                    <tns:request>
+    <tns:PolicyNumber>1103642849</tns:PolicyNumber>
+    <tns:AccountNumber>AA116205503</tns:AccountNumber>
+    <tns:SubmissionNumber>QQ413180908</tns:SubmissionNumber>
+    <tns:InceptionDate>2021-06-01T00:01:00-04:00</tns:InceptionDate>
+    <tns:EffectiveDate>2023-06-01T00:01:00-04:00</tns:EffectiveDate>
+    <tns:ExpirationDate>2024-06-01T00:01:00-04:00</tns:ExpirationDate>
+    <tns:ProductName>Businessowners (v7)</tns:ProductName>
+    <tns:PolicyStatus>New</tns:PolicyStatus>
+    <tns:BaseState>NJ</tns:BaseState>
+    <tns:Source>PC</tns:Source>
+    <tns:ClaimCount>1</tns:ClaimCount>
+    <tns:Locations>
+        <tns:Location>
+            <tns:LocationNumber>1</tns:LocationNumber>
+            <tns:LocationState>New Jersey</tns:LocationState>
+            <tns:Buildings>
+                <tns:Building>
+                    <tns:BuildingNumber>4421</tns:BuildingNumber>
+                    <tns:BuildingLimit>0</tns:BuildingLimit>
+                    <tns:BusinessPersonalPropertyLimit>10000.0000</tns:BusinessPersonalPropertyLimit>
+                    <tns:YearBuilt>1960</tns:YearBuilt>
+                    <tns:NoofStories>1</tns:NoofStories>
+                    <tns:YearofLastRoofingUpgrade>2010</tns:YearofLastRoofingUpgrade>
+                    <tns:YearofLastPlumbingUpgrade>2010</tns:YearofLastPlumbingUpgrade>
+                    <tns:YearofLastElectricalUpgrade>2010</tns:YearofLastElectricalUpgrade>
+                    <tns:YearofLastHVACUpgrade>2010</tns:YearofLastHVACUpgrade>
+                    <tns:SquareFootage>1000</tns:SquareFootage>
+                </tns:Building>
+            </tns:Buildings>
+            <tns:PrefillReportId>I512850744</tns:PrefillReportId>
+            <tns:PropertyID>1075088</tns:PropertyID>
+            <tns:Address>
+                <tns:Address1>81 Dogwood Dr</tns:Address1>
+                <tns:City>Oakland</tns:City>
+                <tns:Zip>07436</tns:Zip>
+                <tns:State>NJ</tns:State>
+            </tns:Address>
+        </tns:Location>
+    </tns:Locations>
+    <tns:AdditionalInsureds>
+        <tns:AdditionalInsured>
+            <tns:AdditionalInsuredNumber>9999</tns:AdditionalInsuredNumber>
+            <tns:AdditionalInsuredName>Additional Insured - Owners, Lessees Or Contractors - Completed Operations - With Additional Insured Requirement In Construction Contract (NJM)</tns:AdditionalInsuredName>
+        </tns:AdditionalInsured>
+    </tns:AdditionalInsureds>
+    <tns:ClueReportId>7555F9605A0AF0CC332E17A45C27C743CDA122D1</tns:ClueReportId>
+    <tns:LegalEntity>Corporation</tns:LegalEntity>
+    <tns:BusinessSegment>CT - Contractor</tns:BusinessSegment>
+    <tns:BusinessStartYear>2010</tns:BusinessStartYear>
+    <tns:PaymentPlanType>Monthly Schedule - BOP</tns:PaymentPlanType>
+    <tns:PersonalCreditScore p2:nil="true" xmlns:p2="http://www.w3.org/2001/XMLSchema-instance" />
+    <tns:NumberOfNOICs p2:nil="true" xmlns:p2="http://www.w3.org/2001/XMLSchema-instance" />
+    <tns:PriorTierFactorLiability>0.8030</tns:PriorTierFactorLiability>
+    <tns:PriorTierFactorProperty>0.8030</tns:PriorTierFactorProperty>
+    <tns:PriorRateIndicator>3</tns:PriorRateIndicator>
+    <tns:RequestSource>Batch</tns:RequestSource>
+    <tns:BatchStatus p2:nil="true" xmlns:p2="http://www.w3.org/2001/XMLSchema-instance" />
+    <tns:BatchCounter p2:nil="true" xmlns:p2="http://www.w3.org/2001/XMLSchema-instance" />
+                </tns:request>
+        </tns:CalculateFactor>
+    </soap12:Body>
+</soap12:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="PredictiveModelService.Entities/IPredictiveModelService/CalculateFactor"/><con:wsrmConfig version="1.2"/></con:call><con:call id="4428033c-34ab-4d59-a475-c2283bda88a9" name="Copy of Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:41380/PredictiveModelService.svc</con:endpoint><con:request><![CDATA[<!-- Created with Liquid XML 2016 Designer Edition 14.1.5.6733 (https://www.liquid-technologies.com) -->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+    <s:Header xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+    </s:Header> 
+    <soap12:Body>
+        <tns:CalculateFactor xmlns:tns="PredictiveModelService.Entities">
+            <tns:request>
+                <tns:AccountNumber>AA426861991</tns:AccountNumber> 
+                <tns:BaseState>NJ</tns:BaseState> 
+                <tns:ClaimCount>2</tns:ClaimCount> 
+                <tns:EffectiveDate>2024-07-29T00:01:00-04:00</tns:EffectiveDate> 
+                <tns:ExpirationDate>2025-07-29T00:01:00-04:00</tns:ExpirationDate> 
+                <tns:InceptionDate>2024-07-25T00:00:00-04:00</tns:InceptionDate> 
+                <tns:PolicyNumber>1404358426</tns:PolicyNumber> 
+                <tns:PolicyStatus>Draft</tns:PolicyStatus> 
+                <tns:PredictiveModelCriteria>
+                    <tns:BaseState>NJ</tns:BaseState> 
+                    <tns:ModelId>0</tns:ModelId> 
+                    <tns:ModelTypeUsed>Champion</tns:ModelTypeUsed> 
+                    <tns:TransactionType>Renewals</tns:TransactionType>
+                </tns:PredictiveModelCriteria> 
+                <tns:ProductName>Businessowners (v7)</tns:ProductName> 
+                <tns:Source>PC</tns:Source> 
+                <tns:SubmissionNumber>QQ470364917</tns:SubmissionNumber> 
+                <tns:AdditionalInsureds />
+                <tns:BusinessSegment>CT - Contractor</tns:BusinessSegment> 
+                <tns:BusinessStartYear>2005</tns:BusinessStartYear> 
+                <tns:LegalEntity>Corporation</tns:LegalEntity> 
+                <tns:Locations>
+                    <tns:Location>
+                        <tns:Address>
+                            <tns:Address1>301 Sullivan Way</tns:Address1> 
+                            <tns:City>Trenton</tns:City> 
+                            <tns:State>NJ</tns:State> 
+                            <tns:Zip>08628</tns:Zip>
+                        </tns:Address> 
+                        <tns:Buildings>
+                            <tns:Building>
+                                <tns:BuildingLimit>100000.0000</tns:BuildingLimit> 
+                                <tns:BuildingNumber>2201</tns:BuildingNumber> 
+                                <tns:BusinessPersonalPropertyLimit>700.0000</tns:BusinessPersonalPropertyLimit> 
+                                <tns:NoofStories>1</tns:NoofStories> 
+                                <tns:SquareFootage>100</tns:SquareFootage> 
+                                <tns:YearBuilt>1998</tns:YearBuilt>
+                            </tns:Building>
+                        </tns:Buildings> 
+                        <tns:LocationNumber>1</tns:LocationNumber> 
+                        <tns:LocationState>New Jersey</tns:LocationState> 
+                        <tns:PrefillReportId>I707380389</tns:PrefillReportId> 
+                        <tns:PropertyID>353263</tns:PropertyID>
+                    </tns:Location>
+                </tns:Locations> 
+                <tns:PaymentPlanType>Quarterly Schedule - BOP</tns:PaymentPlanType> 
+                <tns:PriorRateIndicator>3</tns:PriorRateIndicator> 
+                <tns:PriorTierFactorLiability>0.9940</tns:PriorTierFactorLiability> 
+                <tns:PriorTierFactorProperty>0.9940</tns:PriorTierFactorProperty>
+            </tns:request>
+        </tns:CalculateFactor>
+    </soap12:Body>
+</soap12:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="PredictiveModelService.Entities/IPredictiveModelService/CalculateFactor"/><con:wsrmConfig version="1.2"/></con:call><con:call id="2cde077b-95a0-40e5-9ff8-7ce6dece2155" name="Copy of Request 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:41380/PredictiveModelService.svc</con:endpoint><con:request><![CDATA[<!-- Created with Liquid XML 2016 Designer Edition 14.1.5.6733 (https://www.liquid-technologies.com) -->
+<soap12:Envelope xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+    <s:Header xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+    </s:Header> 
+    <soap12:Body>
+        <tns:CalculateFactor xmlns:tns="PredictiveModelService.Entities">
+            <tns:request>
+                <tns:AccountNumber>AA426861991</tns:AccountNumber> 
+                <tns:BaseState>NJ</tns:BaseState> 
+                <tns:ClaimCount>2</tns:ClaimCount> 
+                <tns:EffectiveDate>2024-07-29T00:01:00-04:00</tns:EffectiveDate> 
+                <tns:ExpirationDate>2025-07-29T00:01:00-04:00</tns:ExpirationDate> 
+                <tns:InceptionDate>2024-07-25T00:00:00-04:00</tns:InceptionDate> 
+                <tns:PolicyNumber>1404358426</tns:PolicyNumber> 
+                <tns:PolicyStatus>Draft</tns:PolicyStatus> 
+                <tns:PredictiveModelCriteria>
+                    <tns:BaseState>NJ</tns:BaseState> 
+                    <tns:ModelId>0</tns:ModelId> 
+                    <tns:ModelTypeUsed>Champion</tns:ModelTypeUsed> 
+                    <tns:TransactionType>Renewals</tns:TransactionType>
+                </tns:PredictiveModelCriteria> 
+                <tns:ProductName>Businessowners (v7)</tns:ProductName> 
+                <tns:Source>PC</tns:Source> 
+                <tns:SubmissionNumber>QQ470364917</tns:SubmissionNumber> 
+                <tns:AdditionalInsureds />
+                <tns:BusinessSegment>CT - Contractor</tns:BusinessSegment> 
+                <tns:BusinessStartYear>2005</tns:BusinessStartYear> 
+                <tns:LegalEntity>Corporation</tns:LegalEntity> 
+                <tns:Locations>
+                    <tns:Location>
+                        <tns:Address>
+                            <tns:Address1>301 Sullivan Way</tns:Address1> 
+                            <tns:City>Trenton</tns:City> 
+                            <tns:State>NJ</tns:State> 
+                            <tns:Zip>08628</tns:Zip>
+                        </tns:Address> 
+                        <tns:Buildings>
+                            <tns:Building>
+                                <tns:BuildingLimit>100000.0000</tns:BuildingLimit> 
+                                <tns:BuildingNumber>2201</tns:BuildingNumber> 
+                                <tns:BusinessPersonalPropertyLimit>700.0000</tns:BusinessPersonalPropertyLimit> 
+                                <tns:NoofStories>1</tns:NoofStories> 
+                                <tns:SquareFootage>100</tns:SquareFootage> 
+                                <tns:YearBuilt>1998</tns:YearBuilt>
+                            </tns:Building>
+                        </tns:Buildings> 
+                        <tns:LocationNumber>1</tns:LocationNumber> 
+                        <tns:LocationState>New Jersey</tns:LocationState> 
+                        <tns:PrefillReportId>B322544566</tns:PrefillReportId> 
+                        <tns:PropertyID>353263</tns:PropertyID>
+                    </tns:Location>
+                </tns:Locations> 
+                <tns:PaymentPlanType>Quarterly Schedule - BOP</tns:PaymentPlanType> 
+                <tns:PriorRateIndicator>3</tns:PriorRateIndicator> 
+                <tns:PriorTierFactorLiability>0.9940</tns:PriorTierFactorLiability> 
+                <tns:PriorTierFactorProperty>0.9940</tns:PriorTierFactorProperty>
+            </tns:request>
+        </tns:CalculateFactor>
+    </soap12:Body>
+</soap12:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="PredictiveModelService.Entities/IPredictiveModelService/CalculateFactor"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="PredictiveModelService.Entities/IPredictiveModelService/GetRawReportData" name="GetRawReportData" bindingOperationName="GetRawReportData" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="fda7c49b-e21f-4b45-9c3d-8e3b3d644889"><con:settings/><con:call name="Request 1" id="41d7b05a-58d0-445c-bc3d-39410efba0c9"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:41380/PredictiveModelService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pred="PredictiveModelService.Entities">
+   <soap:Header/>
+   <soap:Body>
+      <pred:GetRawReportData>
+         <!--Optional:-->
+         <pred:request>
+            <!--Optional:-->
+            <pred:SubmissionNumber>?</pred:SubmissionNumber>
+         </pred:request>
+      </pred:GetRawReportData>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="PredictiveModelService.Entities/IPredictiveModelService/GetRawReportData"/></con:call></con:operation><con:operation isOneWay="false" action="PredictiveModelService.Entities/IPredictiveModelService/RunHealthCheck" name="RunHealthCheck" bindingOperationName="RunHealthCheck" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="afdd56b7-011d-4ca5-a08e-92258d104ffb"><con:settings/><con:call name="Request 1" id="22980473-712a-47ef-9ef6-d39cdb29d31e"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:41380/PredictiveModelService.svc</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:pred="PredictiveModelService.Entities">
+   <soap:Header/>
+   <soap:Body>
+      <pred:RunHealthCheck>
+         <!--Optional:-->
+         <pred:request>
+            <!--Optional:-->
+            <pred:id>?</pred:id>
+         </pred:request>
+      </pred:RunHealthCheck>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="PredictiveModelService.Entities/IPredictiveModelService/RunHealthCheck"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
