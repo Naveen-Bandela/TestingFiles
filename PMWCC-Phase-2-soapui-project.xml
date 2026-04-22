@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7c654182-8a6d-4d13-b6aa-9c93e1469741" activeEnvironment="Default" name="PMWCC Phase 2" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="73d37ab0-f8f2-4199-8acc-d9c2abd52a3f" wsaVersion="NONE" name="WCCPredictiveModelingServiceSoap" type="wsdl" bindingName="{http://njm.com/EnterpriseRating/WCCPredictiveModeling/Pricing}WCCPredictiveModelingServiceSoap" soapVersion="1_1" anonymous="optional" definition="file:/C:/vijay/WSDL/DataPower/Phase2/WCCPredictiveModelingService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:\C:\vijay\WSDL\DataPower\Phase2\WCCPredictiveModelingService.wsdl"><con:part><con:url>file:\C:\vijay\WSDL\DataPower\Phase2\WCCPredictiveModelingService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://njm.com/EnterpriseRating/WCCPredictiveModeling/Pricing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://njm.com/EnterpriseRating/WCCPredictiveModeling/Pricing" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://njm.com/EnterpriseRating/WCCPredictiveModeling/Pricing">
+      <s:element name="RatePolicy">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WCCPredictiveModelingPolicies" nillable="true" type="tns:ArrayOfWCCPredictiveModelingPolicy"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWCCPredictiveModelingPolicy">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WCCPredictiveModelingPolicy" nillable="true" type="tns:WCCPredictiveModelingPolicy"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WCCPredictiveModelingPolicy">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Claims" type="tns:ArrayOfClaims"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyNumber" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="RateIndicator" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyEffectiveDate" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyInceptionDate" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="RatingModel" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DistinctClassCodePos1" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DistinctClassCodePos12" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DistinctClassCodePos123" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DistinctClassCodePos1234" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="HazardGrade" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimCreatedDate" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Payroll" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofClassCodes" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectionType" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Submodel" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofEmployees" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CountOfOSHAInspectionTypeA" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CountOfOSHAInspectionTypeB" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CountOfOSHAInspectionTypeC" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CountOfOSHAInspectionTypeD" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CountOfOSHAInspectionTypeE" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CountOfOSHAInspectionTypeF" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CountOfOSHAInspectionTypeG" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CountOfOSHAInspectionTypeH" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CountOfOSHAInspectionTypeI" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CountOfOSHAInspectionTypeJ" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CountOfOSHAInspectionTypeK" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CountOfOSHAInspectionTypeL" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="CountOfOSHAInspectionTypeM" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsAPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsBPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsCPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsDPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsEPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsFPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsGPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsHPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsIPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsJPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsKPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsLPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberofInspectionsMPerEmployee" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ISOClaimIndicator" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="AverageLengthOfInspection" nillable="true" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfClaims">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Claims" nillable="true" type="tns:Claims"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Claims">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BodyParts" type="tns:ArrayOfBodyParts"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimNumberString" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DateOfLoss" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="TotalIncurred" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="HowReported" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimType" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="InjuryCause" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DetailedCauseofInjury" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimantGender" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimantDateOfBirth" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DateReported" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="DaysOfServiceLength" nillable="true" type="s:int"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBodyParts">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BodyParts" nillable="true" type="tns:BodyParts"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BodyParts">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BodyPartSequenceNumber" nillable="true" type="s:int"/>
+          <s:element minOccurs="0" maxOccurs="1" name="BodyPart" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PrimaryBodyPartIndicator" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RatePolicyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RatePolicyResult" nillable="true" type="tns:ArrayOfWCCPredictiveModelingPolicyPremium"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWCCPredictiveModelingPolicyPremium">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WCCPredictiveModelingPolicyPremium" nillable="true" type="tns:WCCPredictiveModelingPolicyPremium"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WCCPredictiveModelingPolicyPremium">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SystemError" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorInd" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="LevelError" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="TableLookupError" type="tns:ArrayOfString"/>
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyNumber" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="RateEffectiveDate" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="RateIndicator" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="RatingModel" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimSeverityPreScore" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="SeverityScore" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="InterceptFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ModelBranchFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimantGenderFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="TotalIncurredFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="HazardGradeFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ClassCodeFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NatureOfInjuryFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimantAgeFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PolicyTenureFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ClaimNumber" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="GenderHazardFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="WKDSvcFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Model" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Submodel" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="NumberClassCodesxPayrollFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectionPerEmployeeFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="ISOClaimSearchFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectionDaysFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectNatureAFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectNatureBFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectNatureCFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectNatureDFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectNatureEFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectNatureFFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectNatureGFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectNatureHFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectNatureIFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectNatureJFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectNatureKFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectNatureLFactor" nillable="true" type="s:decimal"/>
+          <s:element minOccurs="0" maxOccurs="1" name="OSHAInspectNatureMFactor" nillable="true" type="s:decimal"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RatePolicySoapIn">
+    <wsdl:part name="parameters" element="tns:RatePolicy"/>
+  </wsdl:message>
+  <wsdl:message name="RatePolicySoapOut">
+    <wsdl:part name="parameters" element="tns:RatePolicyResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="WCCPredictiveModelingServiceSoap">
+    <wsdl:operation name="RatePolicy">
+      <wsdl:input message="tns:RatePolicySoapIn"/>
+      <wsdl:output message="tns:RatePolicySoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WCCPredictiveModelingServiceSoap" type="tns:WCCPredictiveModelingServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="RatePolicy">
+      <soap:operation soapAction="http://njm.com/EnterpriseRating/WCCPredictiveModeling/Pricing/RatePolicy" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WCCPredictiveModelingService">
+    <wsdl:port name="WCCPredictiveModelingServiceSoap" binding="tns:WCCPredictiveModelingServiceSoap">
+      <soap:address location="http://localhost:38667/WCCPredictiveModelingService.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:38667/WCCPredictiveModelingService.asmx</con:endpoint></con:endpoints><con:operation id="911e7b96-77c8-4130-9169-f3e91c165aed" isOneWay="false" action="http://njm.com/EnterpriseRating/WCCPredictiveModeling/Pricing/RatePolicy" name="RatePolicy" bindingOperationName="RatePolicy" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d0d363cd-f391-4bda-a8bf-bf4b95d393c5" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbq.njmgroup.com:7009/Pricing/WCCPredictiveModeling</con:endpoint><con:request><![CDATA[
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pric="http://njm.com/EnterpriseRating/WCCPredictiveModeling/Pricing">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <pric:RatePolicy>
+            <pric:WCCPredictiveModelingPolicies>
+                <!--Zero or more repetitions:-->
+                <pric:WCCPredictiveModelingPolicy>
+                    <pric:Claims>
+                        <pric:Claims>
+                            <pric:BodyParts>
+                                <pric:BodyParts>
+                                    <pric:BodyPartSequenceNumber>200</pric:BodyPartSequenceNumber>
+                                    <pric:BodyPart>Mouth</pric:BodyPart>
+                                    <pric:PrimaryBodyPartIndicator>Y</pric:PrimaryBodyPartIndicator>
+                                </pric:BodyParts>
+                            </pric:BodyParts>
+                            <pric:ClaimNumberString>W2023-013073</pric:ClaimNumberString>
+                            <pric:DateOfLoss>05/08/2020</pric:DateOfLoss>
+                            <pric:TotalIncurred>0</pric:TotalIncurred>
+                            <pric:HowReported>Phone</pric:HowReported>
+                            <pric:ClaimType>NTL</pric:ClaimType>
+                            <pric:InjuryCause>Fall, slip, or trip injury, miscellaneous</pric:InjuryCause>
+                            <pric:DetailedCauseofInjury>Puncture</pric:DetailedCauseofInjury>
+                            <pric:ClaimantGender>Male</pric:ClaimantGender>
+                            <pric:ClaimantDateOfBirth>02/02/1982</pric:ClaimantDateOfBirth>
+                            <pric:DateReported>02/03/2023</pric:DateReported>
+                            <pric:DaysOfServiceLength>999999999</pric:DaysOfServiceLength>
+                        </pric:Claims>
+                    </pric:Claims>
+                    <pric:PolicyNumber>W770776</pric:PolicyNumber>
+                    <pric:PolicyEffectiveDate>04/08/2020</pric:PolicyEffectiveDate>
+                    <pric:PolicyInceptionDate>04/01/2020</pric:PolicyInceptionDate>
+                    <pric:State>NJ</pric:State>
+                    <pric:RatingModel>FNOL</pric:RatingModel>
+                    <pric:DistinctClassCodePos1>3</pric:DistinctClassCodePos1>
+                    <pric:DistinctClassCodePos12>4</pric:DistinctClassCodePos12>
+                    <pric:DistinctClassCodePos123>4</pric:DistinctClassCodePos123>
+                    <pric:DistinctClassCodePos1234>4</pric:DistinctClassCodePos1234>
+                    <pric:HazardGrade>C</pric:HazardGrade>
+                    <pric:ClaimCreatedDate>02/03/2023</pric:ClaimCreatedDate>
+                    <pric:Payroll>320000</pric:Payroll>
+                    <pric:NumberofClassCodes>4</pric:NumberofClassCodes>
+                    <pric:Submodel>Model2</pric:Submodel>
+                    <pric:NumberofEmployees>-999999999</pric:NumberofEmployees>
+                    <pric:NumberofInspectionsPerEmployee>-999999999</pric:NumberofInspectionsPerEmployee>
+                    <pric:NumberofInspectionsAPerEmployee>-999999999</pric:NumberofInspectionsAPerEmployee>
+                    <pric:NumberofInspectionsBPerEmployee>-999999999</pric:NumberofInspectionsBPerEmployee>
+                    <pric:NumberofInspectionsCPerEmployee>-999999999</pric:NumberofInspectionsCPerEmployee>
+                    <pric:NumberofInspectionsDPerEmployee>-999999999</pric:NumberofInspectionsDPerEmployee>
+                    <pric:NumberofInspectionsEPerEmployee>-999999999</pric:NumberofInspectionsEPerEmployee>
+                    <pric:NumberofInspectionsFPerEmployee>-999999999</pric:NumberofInspectionsFPerEmployee>
+                    <pric:NumberofInspectionsGPerEmployee>-999999999</pric:NumberofInspectionsGPerEmployee>
+                    <pric:NumberofInspectionsHPerEmployee>-999999999</pric:NumberofInspectionsHPerEmployee>
+                    <pric:NumberofInspectionsIPerEmployee>-999999999</pric:NumberofInspectionsIPerEmployee>
+                    <pric:NumberofInspectionsJPerEmployee>-999999999</pric:NumberofInspectionsJPerEmployee>
+                    <pric:NumberofInspectionsKPerEmployee>-999999999</pric:NumberofInspectionsKPerEmployee>
+                    <pric:NumberofInspectionsLPerEmployee>-999999999</pric:NumberofInspectionsLPerEmployee>
+                    <pric:NumberofInspectionsMPerEmployee>-999999999</pric:NumberofInspectionsMPerEmployee>
+                    <pric:ISOClaimIndicator>No</pric:ISOClaimIndicator>
+                    <pric:AverageLengthOfInspection>-999999999</pric:AverageLengthOfInspection>
+                </pric:WCCPredictiveModelingPolicy>
+            </pric:WCCPredictiveModelingPolicies>
+        </pric:RatePolicy>
+    </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://njm.com/EnterpriseRating/WCCPredictiveModeling/Pricing/RatePolicy"/><con:wsrmConfig version="1.2"/></con:call><con:call id="8f488299-0ac8-437d-9f8a-6e4ca1e9cca9" name="Copy of Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.25.7.17:4646/wc-predictive</con:endpoint><con:request><![CDATA[
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pric="http://njm.com/EnterpriseRating/WCCPredictiveModeling/Pricing">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <pric:RatePolicy>
+            <pric:WCCPredictiveModelingPolicies>
+                <!--Zero or more repetitions:-->
+                <pric:WCCPredictiveModelingPolicy>
+                    <pric:Claims>
+                        <pric:Claims>
+                            <pric:BodyParts>
+                                <pric:BodyParts>
+                                    <pric:BodyPartSequenceNumber>200</pric:BodyPartSequenceNumber>
+                                    <pric:BodyPart>Mouth</pric:BodyPart>
+                                    <pric:PrimaryBodyPartIndicator>Y</pric:PrimaryBodyPartIndicator>
+                                </pric:BodyParts>
+                            </pric:BodyParts>
+                            <pric:ClaimNumberString>W2023-013073</pric:ClaimNumberString>
+                            <pric:DateOfLoss>05/08/2020</pric:DateOfLoss>
+                            <pric:TotalIncurred>0</pric:TotalIncurred>
+                            <pric:HowReported>Phone</pric:HowReported>
+                            <pric:ClaimType>NTL</pric:ClaimType>
+                            <pric:InjuryCause>Fall, slip, or trip injury, miscellaneous</pric:InjuryCause>
+                            <pric:DetailedCauseofInjury>Puncture</pric:DetailedCauseofInjury>
+                            <pric:ClaimantGender>Male</pric:ClaimantGender>
+                            <pric:ClaimantDateOfBirth>02/02/1982</pric:ClaimantDateOfBirth>
+                            <pric:DateReported>02/03/2023</pric:DateReported>
+                            <pric:DaysOfServiceLength>999999999</pric:DaysOfServiceLength>
+                        </pric:Claims>
+                    </pric:Claims>
+                    <pric:PolicyNumber>W770776</pric:PolicyNumber>
+                    <pric:PolicyEffectiveDate>04/08/2020</pric:PolicyEffectiveDate>
+                    <pric:PolicyInceptionDate>04/01/2020</pric:PolicyInceptionDate>
+                    <pric:State>NJ</pric:State>
+                    <pric:RatingModel>FNOL</pric:RatingModel>
+                    <pric:DistinctClassCodePos1>3</pric:DistinctClassCodePos1>
+                    <pric:DistinctClassCodePos12>4</pric:DistinctClassCodePos12>
+                    <pric:DistinctClassCodePos123>4</pric:DistinctClassCodePos123>
+                    <pric:DistinctClassCodePos1234>4</pric:DistinctClassCodePos1234>
+                    <pric:HazardGrade>C</pric:HazardGrade>
+                    <pric:ClaimCreatedDate>02/03/2023</pric:ClaimCreatedDate>
+                    <pric:Payroll>320000</pric:Payroll>
+                    <pric:NumberofClassCodes>4</pric:NumberofClassCodes>
+                    <pric:Submodel>Model2</pric:Submodel>
+                    <pric:NumberofEmployees>-999999999</pric:NumberofEmployees>
+                    <pric:NumberofInspectionsAPerEmployee>-999999999</pric:NumberofInspectionsAPerEmployee>
+                    <pric:NumberofInspectionsBPerEmployee>-999999999</pric:NumberofInspectionsBPerEmployee>
+                    <pric:NumberofInspectionsCPerEmployee>-999999999</pric:NumberofInspectionsCPerEmployee>
+                    <pric:NumberofInspectionsDPerEmployee>-999999999</pric:NumberofInspectionsDPerEmployee>
+                    <pric:NumberofInspectionsEPerEmployee>-999999999</pric:NumberofInspectionsEPerEmployee>
+                    <pric:NumberofInspectionsFPerEmployee>-999999999</pric:NumberofInspectionsFPerEmployee>
+                    <pric:NumberofInspectionsGPerEmployee>-999999999</pric:NumberofInspectionsGPerEmployee>
+                    <pric:NumberofInspectionsHPerEmployee>-999999999</pric:NumberofInspectionsHPerEmployee>
+                    <pric:NumberofInspectionsIPerEmployee>-999999999</pric:NumberofInspectionsIPerEmployee>
+                    <pric:NumberofInspectionsJPerEmployee>-999999999</pric:NumberofInspectionsJPerEmployee>
+                    <pric:NumberofInspectionsKPerEmployee>-999999999</pric:NumberofInspectionsKPerEmployee>
+                    <pric:NumberofInspectionsLPerEmployee>-999999999</pric:NumberofInspectionsLPerEmployee>
+                    <pric:NumberofInspectionsMPerEmployee>-999999999</pric:NumberofInspectionsMPerEmployee>
+                    <pric:ISOClaimIndicator>No</pric:ISOClaimIndicator>
+                </pric:WCCPredictiveModelingPolicy>
+            </pric:WCCPredictiveModelingPolicies>
+        </pric:RatePolicy>
+    </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://njm.com/EnterpriseRating/WCCPredictiveModeling/Pricing/RatePolicy"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c1dca36e-d7aa-4354-bbfd-fdab8acba8f9" name="Request 3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:38667/WCCPredictiveModelingService.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pric="http://njm.com/EnterpriseRating/WCCPredictiveModeling/Pricing">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pric:RatePolicy>\r
+         <pric:WCCPredictiveModelingPolicies>\r
+            <!--Zero or more repetitions:-->\r
+            <pric:WCCPredictiveModelingPolicy>\r
+               <!--Optional:-->\r
+               <pric:Claims>\r
+                  <!--Zero or more repetitions:-->\r
+                  <pric:Claims>\r
+                     <!--Optional:-->\r
+                     <pric:BodyParts>\r
+                        <!--Zero or more repetitions:-->\r
+                        <pric:BodyParts>\r
+                           <!--Optional:-->\r
+                           <pric:BodyPartSequenceNumber>?</pric:BodyPartSequenceNumber>\r
+                           <!--Optional:-->\r
+                           <pric:BodyPart>?</pric:BodyPart>\r
+                           <!--Optional:-->\r
+                           <pric:PrimaryBodyPartIndicator>?</pric:PrimaryBodyPartIndicator>\r
+                        </pric:BodyParts>\r
+                     </pric:BodyParts>\r
+                     <!--Optional:-->\r
+                     <pric:ClaimNumberString>?</pric:ClaimNumberString>\r
+                     <!--Optional:-->\r
+                     <pric:DateOfLoss>?</pric:DateOfLoss>\r
+                     <!--Optional:-->\r
+                     <pric:TotalIncurred>?</pric:TotalIncurred>\r
+                     <!--Optional:-->\r
+                     <pric:HowReported>?</pric:HowReported>\r
+                     <!--Optional:-->\r
+                     <pric:ClaimType>?</pric:ClaimType>\r
+                     <!--Optional:-->\r
+                     <pric:InjuryCause>?</pric:InjuryCause>\r
+                     <!--Optional:-->\r
+                     <pric:DetailedCauseofInjury>?</pric:DetailedCauseofInjury>\r
+                     <!--Optional:-->\r
+                     <pric:ClaimantGender>?</pric:ClaimantGender>\r
+                     <!--Optional:-->\r
+                     <pric:ClaimantDateOfBirth>?</pric:ClaimantDateOfBirth>\r
+                     <!--Optional:-->\r
+                     <pric:DateReported>?</pric:DateReported>\r
+                     <!--Optional:-->\r
+                     <pric:DaysOfServiceLength>?</pric:DaysOfServiceLength>\r
+                  </pric:Claims>\r
+               </pric:Claims>\r
+               <!--Optional:-->\r
+               <pric:PolicyNumber>?</pric:PolicyNumber>\r
+               <!--Optional:-->\r
+               <pric:RateIndicator>?</pric:RateIndicator>\r
+               <!--Optional:-->\r
+               <pric:PolicyEffectiveDate>?</pric:PolicyEffectiveDate>\r
+               <!--Optional:-->\r
+               <pric:PolicyInceptionDate>?</pric:PolicyInceptionDate>\r
+               <!--Optional:-->\r
+               <pric:State>?</pric:State>\r
+               <!--Optional:-->\r
+               <pric:RatingModel>?</pric:RatingModel>\r
+               <!--Optional:-->\r
+               <pric:DistinctClassCodePos1>?</pric:DistinctClassCodePos1>\r
+               <!--Optional:-->\r
+               <pric:DistinctClassCodePos12>?</pric:DistinctClassCodePos12>\r
+               <!--Optional:-->\r
+               <pric:DistinctClassCodePos123>?</pric:DistinctClassCodePos123>\r
+               <!--Optional:-->\r
+               <pric:DistinctClassCodePos1234>?</pric:DistinctClassCodePos1234>\r
+               <!--Optional:-->\r
+               <pric:HazardGrade>?</pric:HazardGrade>\r
+               <!--Optional:-->\r
+               <pric:ClaimCreatedDate>?</pric:ClaimCreatedDate>\r
+               <!--Optional:-->\r
+               <pric:Payroll>?</pric:Payroll>\r
+               <!--Optional:-->\r
+               <pric:NumberofClassCodes>?</pric:NumberofClassCodes>\r
+               <!--Optional:-->\r
+               <pric:OSHAInspectionType>?</pric:OSHAInspectionType>\r
+               <!--Optional:-->\r
+               <pric:Submodel>?</pric:Submodel>\r
+               <!--Optional:-->\r
+               <pric:NumberofEmployees>?</pric:NumberofEmployees>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsPerEmployee>?</pric:NumberofInspectionsPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:CountOfOSHAInspectionTypeA>?</pric:CountOfOSHAInspectionTypeA>\r
+               <!--Optional:-->\r
+               <pric:CountOfOSHAInspectionTypeB>?</pric:CountOfOSHAInspectionTypeB>\r
+               <!--Optional:-->\r
+               <pric:CountOfOSHAInspectionTypeC>?</pric:CountOfOSHAInspectionTypeC>\r
+               <!--Optional:-->\r
+               <pric:CountOfOSHAInspectionTypeD>?</pric:CountOfOSHAInspectionTypeD>\r
+               <!--Optional:-->\r
+               <pric:CountOfOSHAInspectionTypeE>?</pric:CountOfOSHAInspectionTypeE>\r
+               <!--Optional:-->\r
+               <pric:CountOfOSHAInspectionTypeF>?</pric:CountOfOSHAInspectionTypeF>\r
+               <!--Optional:-->\r
+               <pric:CountOfOSHAInspectionTypeG>?</pric:CountOfOSHAInspectionTypeG>\r
+               <!--Optional:-->\r
+               <pric:CountOfOSHAInspectionTypeH>?</pric:CountOfOSHAInspectionTypeH>\r
+               <!--Optional:-->\r
+               <pric:CountOfOSHAInspectionTypeI>?</pric:CountOfOSHAInspectionTypeI>\r
+               <!--Optional:-->\r
+               <pric:CountOfOSHAInspectionTypeJ>?</pric:CountOfOSHAInspectionTypeJ>\r
+               <!--Optional:-->\r
+               <pric:CountOfOSHAInspectionTypeK>?</pric:CountOfOSHAInspectionTypeK>\r
+               <!--Optional:-->\r
+               <pric:CountOfOSHAInspectionTypeL>?</pric:CountOfOSHAInspectionTypeL>\r
+               <!--Optional:-->\r
+               <pric:CountOfOSHAInspectionTypeM>?</pric:CountOfOSHAInspectionTypeM>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsAPerEmployee>?</pric:NumberofInspectionsAPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsBPerEmployee>?</pric:NumberofInspectionsBPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsCPerEmployee>?</pric:NumberofInspectionsCPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsDPerEmployee>?</pric:NumberofInspectionsDPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsEPerEmployee>?</pric:NumberofInspectionsEPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsFPerEmployee>?</pric:NumberofInspectionsFPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsGPerEmployee>?</pric:NumberofInspectionsGPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsHPerEmployee>?</pric:NumberofInspectionsHPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsIPerEmployee>?</pric:NumberofInspectionsIPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsJPerEmployee>?</pric:NumberofInspectionsJPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsKPerEmployee>?</pric:NumberofInspectionsKPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsLPerEmployee>?</pric:NumberofInspectionsLPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:NumberofInspectionsMPerEmployee>?</pric:NumberofInspectionsMPerEmployee>\r
+               <!--Optional:-->\r
+               <pric:ISOClaimIndicator>?</pric:ISOClaimIndicator>\r
+               <!--Optional:-->\r
+               <pric:AverageLengthOfInspection>?</pric:AverageLengthOfInspection>\r
+            </pric:WCCPredictiveModelingPolicy>\r
+         </pric:WCCPredictiveModelingPolicies>\r
+      </pric:RatePolicy>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://njm.com/EnterpriseRating/WCCPredictiveModeling/Pricing/RatePolicy"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
